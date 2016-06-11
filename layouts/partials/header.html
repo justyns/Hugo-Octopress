@@ -48,6 +48,10 @@
   <!-- Google Analytics -->
   {{ template "_internal/google_analytics.html" . }}
 
+  <!-- Custom header includes -->
+  {{ if .Site.Params.customHeaderPartial  }}
+    {{ partial .Site.Params.customHeaderPartial . }}
+  {{ end }}
 </head>
 <body{{ with .Site.Params.theme }} class="{{ . }}"{{ end }}>
 
