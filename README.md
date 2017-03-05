@@ -20,106 +20,70 @@ Hugo-Octopress is a port of the classic [Octopress][octopress-link] theme to [Hu
 - [License page](#licensepage)
 - [Table of contents](#tableofcontents)
 - [Not Found or 404.html](#notfound)
+- [Taxonomy pages](#taxonomy)
 - [Issues/TODO](#issues)
 - [Attribution](#attribution)
-- [Ported by](#porterby)
+- [Ported by](#portedby)
 - [Theme license](#themelicense)
 
-![screenshot](/images/screenshot2.png)
+![screenshot](/images/screenshot.png)
 
 ## <a name="config"></a>Configuration
-This section is about parameters in the [configuration file](https://gohugo.io/overview/configuration/) and how they can be used to customize the output. A working config file `sample-config.toml` is provided and parameters are explained below:
+This section is about parameters in the [configuration file](https://gohugo.io/overview/configuration/) and how they can be used to customize the output. A working config file `sample-config.toml` is provided and miscellaneous parameters are explained below:
 
-``` python
-baseurl = "http://example.com/"
-disablePathToLower = true
+``` toml
+baseurl = "http://example.com"
+disablePathToLower = false
 languageCode = "en-us"
+title = "Site title"
 theme = "hugo-octopress"
 
-# this will appear in the header at the top of the page and in the landing page's title
-title = "Website's title"
-
-# number of blog posts displayed in each page
+# Number of blog posts displayed in each page
 paginate = 6
 
-# change the article links
 [permalinks]
-post = "/blog/:year-:month-:day-:title/"
+post = "/blog/:year-:month-:day-:title/" # change the post URL to look like the old ones
 
-# to generate tags and categories
-# tags are generated using the template hugo-octopress/layouts/indexes/tags.html
-# categories are generated using the template hugo-octopress/layouts/indexes/categories.html
-# if you change anything here, rename the templates/directories accordingly
+# Make tags and categories work
 [indexes]
-  tag = "tags"
-  category = "categories"
+	tag = "tags"
+	category = "categories"
 
 [params]
 
-  # number of recent posts that will be shown in the sidebar - set to 0 or remove to hide this section
-  sidebarRecentLimit = 10
+	# If false, all of the post will appear on front page (and in pagination)
+	truncate = true
 
-  # sidebar customization - passed to markdownify
-  sidebar_header = "Sidebar Header"
+	# Author's name (this will appear in metadata and under posts)
+	author = "Author's name"
 
-  # sidebar text supports markdown
-  sidebar_text = """Sidebar text supports is passed to *markdownify* so it supports markdown. Here's a [link to google](https://www.google.com)
-  </br>
-  Second line
-  </br>
-  Third line
-  """
+	# This text appears in the site header under website title
+	subtitle = "Subtitle appears under website title"
 
-  # sidebar menu
-  # if true will add a sidebar menu between sidebar text and recent posts
-  sidebar_menu_enabled = true
-  sidebar_menu_header = "Sidebar Links"
+	# Used in the search engine
+	searchEngineURL = "https://www.google.com/search"
 
-  # if false, all of posts' content will appear on front page (and in pagination) - not recommended
-  # be sure to use the <!--more--> delimiter
-  truncate = true
+	# Text of the "Continue Reading" label. &rarr; == right arrow, but it gets messed up in the string so we will add it to index.html manually
+	continueReadingText = "Would you like to know more?"
 
-  # author's name (this will appear in metadata and at the bottom of posts)
-  author = "Site Author"
+	# Google analytics code
+	googleAnalytics = "google analytics"
 
-  # appears in the site header under website title
-  subtitle = "Site Subtitle"
+	# Disqus shortcode
+	# Disable comments for a specific post by adding "comments: false" in its frontmatter
+	disqusShortname = "Your disqus shortname"
 
-  # text of the Continue Reading label - if not set, it will default to "Read On &rarr;"
-  # &rarr; == right arrow, but it gets messed up in the string so it is added to hugo-octopress/layouts/index.html manually
-  # this can be modified in hugo-octopress/layouts/index.html
-  continue_reading = "Would you like to know more?"
+	rss = true  # switch to true to enable RSS icon link
 
-  # disqus - simply enter your disqus - using the template from https://gohugo.io/extras/comments/ at /hugo-octopress/layouts/partials/disqus.html that disables disqus when running on localhost (if you are testing it offline remember to comment out the if in the template that checks for localhost)
-  # the template is injected into the pages in /hugo-octopress/layouts/partials/post-footer.html which is in every post (and not non-post pages like license.html)
-  disqusShortname = "your disqus short name"
+  # Set to true to use a text label for RSS instead of an icon
+  # This is overwritten by the `rss` setting
+  textrss = false
 
-  # Google analytics - _internal/googleanalytics.html in injected in hugo-octopress/layouts/partials/header.html
-  googleAnalytics = "Your Google Analytics tracking code"
+	# Website's default description
+	defaultDescription = ""
 
-  # switch to true to enable RSS icon link in the navigation menu
-  rss = true  
-
-  # Website's default description used in meta tags
-  defaultDescription = ""
-
-  # keywords used in meta tags
-  # defaultKeywords = ["keyword1" , "keyword2" , "keyword3" , "keyword4"]
-
-  # override the built-in css
-  # custom_css = ["css/custom.css","css/custom2.css"]
-
-  # enable/disable Table of Contents in each page -
-  tableOfContents = false
-
-  # 404.html header and text -both support markdown
-  notfound_header = "There's nothing here"
-
-  notfound_text = """Please either go back or use the navigation/sidebar menus.
-  """
-
-  # Set to true to hide ReadingTime on posts
-  disableReadingTime = false
+	# Populate this with your own search keywords - these will appear in the meta tags
+	# defaultKeywords = ["keyword1" , "keyword2" , "keyword3" , "keyword4"]
 ```
 
 ## <a name="highlight"></a>Code highlight
@@ -131,64 +95,77 @@ Octopress classic theme uses the pygments' `solarized dark` theme. It is not ins
 
 The following options in `config.toml` modify the behavior:
 
-```
+``` toml
 [params]
-  # keep it as false please, the css file contains the code for highlighting
+  # Keep it as false please, the css file contains the code for highlighting
   pygmentsuseclasses = false
 
-  # if nothing is set, then solarized_light is used
-  # other styles can be viewed in [http://pygments.org/](http://pygments.org/)
+  # If nothing is set, then solarized_light is used
+  # Other styles can be viewed in [http://pygments.org/](http://pygments.org/)
   pygmentsstyle = "solarized_dark"
 
-  # highlight shortcode and code fences (```) will be treated similarly
+  # Highlight shortcode and code fences (```) will be treated similarly
   pygmentscodefences = true
 
-  # pygment options can be added here
-  # Hugo supports these pygments options: style, encoding, noclasses, hl_lines, linenos - for example:
-  # pygmentsoptions = "linenos=true"
+  # pygments options can be added here
+  # Hugo supports these pygments options: style, encoding, noclasses, hl_lines, linenos
+  # for example: pygmentsoptions = "linenos=true"
 ```
 ## <a name="markdown"></a>Markdown options
 
 Blackfriday is Hugo's markdown engine. For a list of options visit [https://gohugo.io/overview/configuration/](https://gohugo.io/overview/configuration/) (scroll down to `Configure Blackfriday rendering`). Blackfriday options can be set in the `config.toml` file as follows:
 
-    [blackfriday]
-      hrefTargetBlank = true # open the external links in a new window
-      fractions = false
+``` toml
+[blackfriday]
+  hrefTargetBlank = true # open the external links in a new window
+  fractions = false
+```
 
 ## <a name="cssoverride"></a>CSS override
-You can override the built-in css by using your own. Just put your own css files in the `static` directory of your website (the one in the theme directory also works but is not recommended) and modify the `custom_css` parameter in your config file. The path referenced in the parameter should be relative to the `static` folder. These css files will be added through the `header` partial after the built-in css file.
+You can override the built-in css by using your own. Just put your own css files in the `static` directory of your website (the one in the theme directory also works but is not recommended) and modify the `customCSS` parameter in your config file. The path referenced in the parameter should be relative to the `static` folder. These css files will be added through the `header` partial after the built-in css file.
 
 For example, if your css files are `static/css/custom.css` and `static/css/custom2.css` then add the following to the config file:
 
-    [params]
-      custom_css = ["css/custom.css","css/custom2.css"]
+``` toml
+[params]
+  customCSS = ["css/custom.css","css/custom2.css"]
+```
 
 ## <a name="menu"></a>Navigation menu
 Links to the left of the navigation menu (everything other than Google search and RSS icon) can be configured here. Navigation menu is generated using the `hugo-octopress/layouts/partials/navigation.html` template.
 
-All links open in a new window except links to root. If the URL is "/" the link will not open in a new window (you can see this logic in the partial template).
+By default navigation menu links will open in the same window. You can change this by setting the `navigationNewWindow` parameter in the config file as seen below. Links to root ("/") will always open in the same window. Currently Hugo does not support adding custom attributes to menu items.
 
 Links are sorted according to weight from left to right. For example a link with weight of `-10` will be to the left of links with weight `0` or `10`. Links can be added to the `config.toml` as follows:
 
-    [[menu.main]]
-      Name = "Blog"
-      URL = "/"
-      weight = -10
+``` toml
+[[menu.main]]
+  Name = "Blog"
+  URL = "/"
+  weight = -10
 
-    [[menu.main]]
-      Name = "The other guy from Wham!"
-      URL = "https://www.google.com/search?q=andrew+ridgeley"
-      weight = -5
+[[menu.main]]
+  Name = "The other guy from Wham!"
+  URL = "https://www.google.com/search?q=andrew+ridgeley"
+  weight = -5
 
-    [[menu.main]]
-      Name = "This theme - add link"
-      URL = "https://www.github.com"
+[[menu.main]]
+  Name = "This theme - add link"
+  URL = "https://www.github.com"
+
+[params]
+  # If set to true, navigation menu links will open in a new window with the exception of links to root ("/")
+  # If this item does not exist or set to false, then navigation menu links will open in the same window
+	navigationNewWindow = true
+```
 
 The search engine can also be customized in the `config.toml` file as follows:
 
-    [params]
-      # search engine parameter in the navigation menu
-      search_engine_url = "https://www.google.com/search"
+``` toml
+[params]
+  # Search engine parameter in the navigation menu
+  searchEngineURL = "https://www.google.com/search"
+```
 
 ## <a name="sidebarlinks"></a>Sidebar
 Sidebar has four parts from top to bottom:
@@ -203,33 +180,36 @@ The sidebar is generated using the partial template at `hugo-octopress/layouts/p
 ### <a name="sidebartext"></a>Sidebar text
 Sidebar text has two parts and both can be configured in the config file. Both values are passed to `markdownify`. For example you can add links and new lines.
 
-* Sidebar header which appear on top in a `<h1>` tag. Can be configured in the config file through the `sidebar_header` tag.
-* Sidebar text appears under the header and can be configured by modifying the `sidebar_text` tag in the config file.
+* Sidebar header which appear on top in a `<h1>` tag. Can be configured in the config file through the `sidebarHeader` tag.
+* Sidebar text appears under the header and can be configured by modifying the `sidebarText` tag in the config file.
 
 New lines can be added with `</br>` or normal markdown (two spaces at the end of line or two new lines). When adding two new lines, remember to remove the indentation in the config file otherwise the new line will be treated as a codeblock
 
 ### <a name="sidebarsocial"></a>Social network icons
 Sidebar links are read from the config file as follows:
 
-    [params]
-      github = "https://github.com/parsiya/"
-      bitbucket = "https://bitbucket.org/parsiya/"
-      twitter = "https://twitter.com/cryptogangsta/"
-      keybase = "https://keybase.io/parsiya/"
-      stackoverflow = ""
-      linkedin = ""
-      googleplus = ""
-      youtube = ""
-      facebook = ""
+``` toml
+[params]
+  github = "https://github.com/parsiya/"
+  bitbucket = "https://bitbucket.org/parsiya/"
+  gitlab = ""
+  twitter = "https://twitter.com/cryptogangsta/"
+  keybase = "https://keybase.io/parsiya/"
+  stackoverflow = ""
+  linkedin = ""
+  googleplus = ""
+  youtube = ""
+  facebook = ""
+```
 
 If more than links are added, then add a `</br>` between the first four and the rest. Code to display links (and the idea to use these icons) was taken from [Hyde-x](https://github.com/zyro/hyde-x/).
 
 Icons are from [http://fontawesome.io](http://fontawesome.io) by Dave Gandy. To use icons with square dark backgrounds add `-square`. For example `<i class="fa fa-twitter-square fa-3x"></i>`. Size can be from 1 to 5 or `fa-lg` to be adaptive.
 
 ### <a name="sidebarmenu"></a>Sidebar menu
-This menu can be enabled by setting the `sidebar_menu_enabled` to `true` in config file. It has two main parts:
+This menu can be enabled by setting the `sidebarMenuEnabled` to `true` in config file. It has two main parts:
 
-* A header that appears inside the `<h1>` at the top. It can be set in the config file using the `sidebar_menu_header`. This part only supports text.
+* A header that appears inside the `<h1>` at the top. It can be set in the config file using the `sidebarMenuHeader`. This part only supports text.
 * A series of links. They can be set in the config file similar to navigation menus using the `[[menu.sidebar]]` tag as follows:
 
         [[menu.sidebar]]
@@ -241,6 +221,8 @@ This menu can be enabled by setting the `sidebar_menu_enabled` to `true` in conf
           Name = "Hugo"
           URL = "/categories/hugo/"
           weight = 1
+
+  * If the `sidebarNewWindow` parameter in config file to `true` to open the sidebar links in a new window. If this parameter does not exist or set to `false` then links open in the same window (default behavior).
 
 ### <a name="sidebarrecent"></a>Recent posts
 Last x recent posts can be displayed in the sidebar. This number can be set in the config file using the `sidebarRecentLimit`. To hide this section either remove `sidebarRecentLimit` from the config file or set it to zero.
@@ -361,16 +343,19 @@ There are two ways to enable Table of Contents:
 
 * Each post/page can have a variable named `toc` in its frontmatter. This needs to be set to `true`.
 
-
-    title: "title"
-    date: 2016-04-01T20:22:37-04:00
-    draft: false
-    toc: true
+```
+title: "title"
+date: 2016-04-01T20:22:37-04:00
+draft: false
+toc: true
+```
 
 * Global setting is available in the config file, `tableOfContents` under `[Params]` need to be set to `true`.
 
-    [Params]
-      tableOfContents = true
+```
+[Params]
+  tableOfContents = true
+```
 
 The `toc` variable in frontmatter has priority. If it is set `false` then the config file is ignored. It is recommended to not set use the config file and enable the ToC for individual pages. Otherwise, it can be enabled for all pages in the config file and disabled for specific pages using the frontmatter.
 
@@ -379,10 +364,23 @@ You can customize the `404.html` page in the config menu. For extensive customiz
 
 There are two optional parameters in the config file and both support markdown:
 
-* notfound_header: 404 page title
-* notfound_text: 404 page text
+* notFoundHeader: 404 page title
+* notFoundText: 404 page text
 
 If they are not set in the config file, a default page is generated.
+
+## <a name="taxonomy"></a>Taxonomy pages
+The theme can create pages that list all taxonomies (categories and tags) and their count. The taxonomy pages are at `baseURL/tags/` and `baseURL/categories`. This can be accomplished by adding `generateTaxonomyList = true` to the config file. By default the theme sorts the items by count. It can be changed to alphabetical by including `sortTaxonomyAlphabetical = true`.
+
+The switches are as follows:
+
+    [Params]
+      generateTaxonomyList = true
+
+      # This is not needed unless alphabetical sort is needed
+      # sortTaxonomyAlphabetical = true
+
+To revert back to ByCount sort, remove `sortTaxonomyAlphabetical` or set it to false.
 
 ## <a name="issues"></a>Issues/TODO
 
@@ -400,7 +398,7 @@ If you know how to clean it up, please let me know or better yet help me do it :
 ## <a name="Ported by"></a>Ported by
 Ported by Parsia Hakimian:
 
-* website: [parsiya.net](http://parsiya.net)
+* website: [parsiya.net](https://parsiya.net)
 * twitter: [@CryptoGangsta](https://twitter.com/cryptogangsta)
 
 ## <a name="themelicense"></a>Theme license
