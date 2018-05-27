@@ -178,7 +178,7 @@ body>div>div {
     background: #f8f8f8 top left;
     border-right: 1px solid #e0e0e0
 }
-.heading,
+/*.heading,
 body>header h1,
 h1,
 h2,
@@ -187,13 +187,13 @@ h4,
 h5,
 h6 {
     font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif
-}
+}*/
 .sans,
 body>header h2,
 article header p.meta,
 article>footer,
 #content .blog-index footer,
-html .gist .gist-file .gist-meta,
+/*html .gist .gist-file .gist-meta,*/
 #blog-archives a.category,
 #blog-archives time,
 aside.sidebar section,
@@ -231,7 +231,7 @@ h1 {
     font-size: 2.2em;
     line-height: 1.2em
 }
-@media only screen and (min-width: 992px) {
+/* @media only screen and (min-width: 992px) {
     body {
         font-size: 1.15em
     }
@@ -239,7 +239,7 @@ h1 {
         font-size: 2.6em;
         line-height: 1.2em
     }
-}
+} */
 h1,
 h2,
 h3,
@@ -1167,8 +1167,6 @@ article>footer p.meta {
     clear: both;
     overflow: hidden
 }
-.blog-index article+article {
-}
 #content .blog-index {
     padding-top: 0;
     padding-bottom: 0
@@ -1259,119 +1257,7 @@ p.meta+.sharing {
 #fb-root {
     display: none
 }
-.highlighttable,
-html .gist .gist-file .gist-syntax .gist-highlighttable {
-    border-left: 1px solid #05232b !important;
 
-}
-.highlighttable table td.code,
-html .gist .gist-file .gist-syntax .gist-highlighttable table td.code {
-    width: 100%;
-
-}
-.highlighttable .line-numbers,
-html .gist .gist-file .gist-syntax .highlighttable .line_numbers {
-    text-align: right;
-    font-size: 13px;
-    line-height: 1.45em;
-    background: #073642 top left !important;
-    border-right: 1px solid #00232c !important;
-    -webkit-box-shadow: #083e4b -1px 0 inset;
-    -moz-box-shadow: #083e4b -1px 0 inset;
-    box-shadow: #083e4b -1px 0 inset;
-    text-shadow: #021014 0 -1px;
-    padding: .8em !important;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    border-radius: 0
-}
-.highlighttable .line-numbers span,
-html .gist .gist-file .gist-syntax .highlighttable .line_numbers span {
-    color: #586e75 !important
-}
-figure.code,
-.gist-file,
-pre {
-    -webkit-box-shadow: rgba(0, 0, 0, 0.06) 0 0 10px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.06) 0 0 10px;
-    box-shadow: rgba(0, 0, 0, 0.06) 0 0 10px
-}
-figure.code .highlighttable pre,
-.gist-file .highlighttable pre,
-pre .highlighttable pre {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none
-}
-.gist .highlighttable *::-moz-selection,
-figure.code .highlighttable *::-moz-selection {
-    background: #386774;
-    color: inherit;
-    text-shadow: #002b36 0 1px;
-}
-.gist .highlighttable *::-webkit-selection,
-figure.code .highlighttable *::-webkit-selection {
-    background: #386774;
-    color: inherit;
-    text-shadow: #002b36 0 1px
-}
-.gist .highlighttable *::selection,
-figure.code .highlighttable *::selection {
-    background: #386774;
-    color: inherit;
-    text-shadow: #002b36 0 1px
-}
-html .gist .gist-file {
-    margin-bottom: 1.8em;
-    position: relative;
-    border: none;
-    padding-top: 26px !important
-}
-html .gist .gist-file .highlighttable {
-    margin-bottom: 0
-}
-html .gist .gist-file .gist-syntax {
-    border-bottom: 0 !important;
-    background: none !important
-}
-html .gist .gist-file .gist-syntax .gist-highlighttable {
-    background: #002b36 !important
-}
-html .gist .gist-file .gist-syntax .highlighttable pre {
-    padding: 0
-}
-html .gist .gist-file .gist-meta {
-    padding: .6em 0.8em;
-    border: 1px solid #083e4b !important;
-    color: #586e75;
-    font-size: .7em !important;
-    line-height: 1.5em
-}
-html .gist .gist-file .gist-meta a {
-    color: #75878b !important;
-    text-decoration: none
-}
-html .gist .gist-file .gist-meta a:hover {
-    text-decoration: underline
-}
-html .gist .gist-file .gist-meta a:hover {
-    color: #93a1a1 !important
-}
-html .gist .gist-file .gist-meta a[href*='#file'] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: -10px;
-    color: #474747 !important
-}
-html .gist .gist-file .gist-meta a[href*='#file']:hover {
-    color: #1863a1 !important
-}
-html .gist .gist-file .gist-meta a[href*=raw] {
-    top: .4em
-}
 pre {
     /* background: #002b36 top left; */
     -webkit-border-radius: 0.0em;
@@ -1380,7 +1266,7 @@ pre {
     -o-border-radius: 0.0em;
     border-radius: 0.0em;
     line-height: 1.45em;
-    margin-bottom: 0em;
+    margin-bottom: 0.8em;
     padding: 0em 0em;
     /* color: #93a1a1; */
     font-size: 80%;  /* change the code font size */
@@ -1415,13 +1301,15 @@ p pre code,
 li pre code {
     font-size: 1em !important;
     background: none;
-    border: none
+    border: none;
+    color: #93a1a1;
 }
-.pre-code,
-html .gist .gist-file .gist-syntax .highlighttable pre,
-.highlighttable code {
-    font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !important;
-    overflow: scroll;
+
+/* Fix codecaption and the new Chroma highlighter */
+
+div.highlight > pre > code,
+pre > code
+{
     overflow-y: hidden;
     display: block;
     padding: .8em;
@@ -1433,9 +1321,16 @@ html .gist .gist-file .gist-syntax .highlighttable pre,
 .gist-highlighttable {
     margin-bottom: 1.8em;
     background: #002b36;
-    overflow-y: hidden;
-    overflow-x: auto
 }
+
+td > div.highlight > pre > code,
+div.linenodiv > pre > code
+{
+    overflow-y: hidden;
+    display: inline;
+}
+
+/* End fix codecaption and the new Chroma highlighter */
 
 pre::-webkit-scrollbar,
 .highlighttable::-webkit-scrollbar,
@@ -1450,14 +1345,11 @@ pre::-webkit-scrollbar-thumb:horizontal,
     -webkit-border-radius: 4px;
     border-radius: 4px
 }
-.highlighttable code {
-    background: #000
-}
 figure.code {
     background: none;
     padding: 0;
     border: 0;
-    margin-bottom: 1.5em
+    margin-bottom: 0.8em
 }
 figure.code pre {
     margin-bottom: 0
@@ -1471,7 +1363,6 @@ figure.code .highlighttable {
     width: 100%;
 }
 .code-title,
-html .gist .gist-file .gist-meta a[href*='#file'],
 h3.filename,
 figure.code figcaption { /* figcaption changes */
     text-align: center;
@@ -1487,7 +1378,6 @@ figure.code figcaption { /* figcaption changes */
     -webkit-border-top-right-radius: 5px;
     border-top-right-radius: 5px;
     background: #aaa top repeat-x;
-    font-family: "Helvetica Neue",Arial,"Lucida Grande","Lucida Sans Unicode",Lucida,sans-serif;
     border: 1px solid #565656;
     border-top-color: #cbcbcb;
     border-left-color: #a5a5a5;
@@ -1496,7 +1386,6 @@ figure.code figcaption { /* figcaption changes */
     font-size: 90%; /* change size of font in figcaption */
 }
 .download-source,
-html .gist .gist-file .gist-meta a[href*=raw],
 figure.code figcaption a {
     position: absolute;
     right: .8em;
@@ -1508,7 +1397,6 @@ figure.code figcaption a {
     padding-left: 3em
 }
 .download-source:hover,
-html .gist .gist-file .gist-meta a[href*=raw]:hover,
 figure.code figcaption a:hover {
     text-decoration: underline
 }
@@ -1689,14 +1577,7 @@ aside.sidebar:hover a {
 aside.sidebar:hover a:hover {
     color: #0181eb
 }
-.aside-alt-link,
-#pinboard_linkroll .pin-tag {
-    color: #7e7e7e
-}
-.aside-alt-link:hover,
-#pinboard_linkroll .pin-tag:hover {
-    color: #0181eb
-}
+
 @media only screen and (min-width: 768px) {
     .toggle-sidebar {
         outline: none;
@@ -1756,52 +1637,7 @@ aside.sidebar:hover a:hover {
         background: none
     }
 }
-.googleplus h1 {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    -o-box-shadow: none !important;
-    box-shadow: none !important;
-    border-bottom: 0px none !important
-}
-.googleplus a {
-    text-decoration: none;
-    white-space: normal !important;
-    line-height: 32px
-}
-.googleplus a img {
-    float: left;
-    margin-right: 0.5em;
-    border: 0 none
-}
-.googleplus-hidden {
-    position: absolute;
-    top: -1000em;
-    left: -1000em
-}
-#pinboard_linkroll .pin-title,
-#pinboard_linkroll .pin-description {
-    display: block;
-    margin-bottom: .5em
-}
-#pinboard_linkroll .pin-tag {
-    text-decoration: none
-}
-#pinboard_linkroll .pin-tag:hover {
-    text-decoration: underline
-}
-#pinboard_linkroll .pin-tag:after {
-    content: ','
-}
-#pinboard_linkroll .pin-tag:last-child:after {
-    content: ''
-}
-.delicious-posts a.delicious-link {
-    margin-bottom: .5em;
-    display: block
-}
-.delicious-posts p {
-    font-size: 1em
-}
+
 body>footer {
     font-size: 1em; /* increase font size for footer */
     color: #888;
@@ -1849,7 +1685,7 @@ th {
     text-align: center;
 }
 
-/* Taken from hyde-x.css to format labels (categories) as octopress doesn't have  */
+/* Taken from hyde-x.css to format labels (categories) as Octopress doesn't have  */
 
 .label {
   display: inline;
@@ -1949,7 +1785,7 @@ h6 {
     margin-top: 0.8em;
 }
 
-/* side bar code from hyde-x */
+/* side bar code from hyde-x - start */
 
 /*
  * Sidebar
@@ -1993,3 +1829,174 @@ h6 {
     left:   1rem;
   }
 }
+
+/* side bar code from hyde-x - end */
+
+/* making the gist work - start */
+.gist .gist-meta {
+    font-size: 90% !important;
+    color: #586069 !important;
+    background-color: #f7f7f7;
+    border-radius: 0 0 2px 2px;
+    border: 1px solid #a5a5a5 !important;
+    background: #aaa top repeat-x !important;
+    -moz-border-radius-bottomleft: 5px !important;
+    -webkit-border-bottom-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    -moz-border-radius-bottomright: 5px !important;
+    -webkit-border-bottom-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+
+/* Force gist linenos to be the same size as code linenos */
+.gist .blob-num {
+    font-size: 0.938em !important; 
+}
+
+.gist .highlight, .gist .blob-code-inner {
+    font-size: 0.938em !important; /* oh lol what have I done? */
+    font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace !important;
+    line-height: 1.25em !important;
+}
+
+/* credit: https://gist.github.com/RomkeVdMeulen/889d44d3d4c5a11002c57ca068d295ec */
+
+.gist .pl-c1, .gist .pl-s .pl-v {
+    color: #719e07 !important;
+}
+
+.gist .gist-meta {
+    background-color: #073642 !important;
+    color: #93a1a1 !important;
+}
+
+.gist .gist-meta a {
+    color: #268bd2 !important;
+
+}
+
+.gist .gist-data, .gist .highlight {
+    background-color: #002b36 !important;
+    color: #93a1a1 !important;
+}
+
+.gist .pl-smi, .gist .pl-s .pl-s1, .gist .blob-code-inner, .gist .blob-num {
+    color: #93a1a1 !important;
+}
+
+.gist .pl-k {
+    color: #719e07 !important;
+}
+
+.gist .pl-e, .gist .pl-en {
+    color: #cb4b16 !important;
+}
+
+.gist .pl-s, .gist .pl-pds, .gist .pl-s .pl-pse .pl-s1, .gist .pl-sr,
+.gist .pl-sr .pl-cce, .gist .pl-sr .pl-sre, .gist .pl-sr .pl-sra {
+    color: #2aa198 !important;
+    
+}
+
+.gist .pl-s, .gist .pl-pds, .gist .pl-s .pl-pse .pl-s1, .gist .pl-sr,
+.gist .pl-sr .pl-cce, .gist .pl-sr .pl-sre, .gist .pl-sr .pl-sra,
+.gist .pl-e, .gist .pl-en,
+.gist .pl-k,
+.gist .pl-smi, .gist .pl-s .pl-s1, .gist .blob-code-inner, .gist .blob-num,
+.gist .gist-data, .gist .highlight,
+.gist .pl-c1, .gist .pl-s .pl-v,
+.gist .pl-c /* comments */ {
+    font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace !important;
+}
+
+/* credit gist - end*/
+
+/* making the gist work - end */
+
+/* Hugo Figure shortcode - start */
+
+figure figcaption {
+    background: #fff;
+    text-align: center;
+    font-size: 1em;
+    color: #666;
+    display: block;
+}
+
+figure {
+    color: #666;
+}
+
+figure a {
+    color: #666;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* Hugo Figure shortcode - end */
+
+/* Chroma - start */
+
+/* Background */ .chroma { color: #93a1a1; background-color: #002b36; tab-size: 4; }
+/* Other */ .chroma .x { color: #cb4b16 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; display: block; }
+/* LineHighlight */ .chroma .hl { display: block; width: 100%; }
+/* LineNumbersTable */ .chroma .lnt { margin-right: 0.3em; padding: 0 0.3em 0 0.3em; }
+/* LineNumbers */ .chroma .ln { margin-right: 0.3em; padding: 0 0.3em 0 0.3em; }
+/* Keyword */ .chroma .k { color: #719e07 }
+/* KeywordConstant */ .chroma .kc { color: #cb4b16 }
+/* KeywordDeclaration */ .chroma .kd { color: #268bd2 }
+/* KeywordNamespace */ .chroma .kn { color: #719e07 }
+/* KeywordPseudo */ .chroma .kp { color: #719e07 }
+/* KeywordReserved */ .chroma .kr { color: #268bd2 }
+/* KeywordType */ .chroma .kt { color: #dc322f }
+/* NameBuiltin */ .chroma .nb { color: #b58900 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #268bd2 }
+/* NameClass */ .chroma .nc { color: #268bd2 }
+/* NameConstant */ .chroma .no { color: #cb4b16 }
+/* NameDecorator */ .chroma .nd { color: #268bd2 }
+/* NameEntity */ .chroma .ni { color: #cb4b16 }
+/* NameException */ .chroma .ne { color: #cb4b16 }
+/* NameFunction */ .chroma .nf { color: #268bd2 }
+/* NameTag */ .chroma .nt { color: #268bd2 }
+/* NameVariable */ .chroma .nv { color: #268bd2 }
+/* LiteralString */ .chroma .s { color: #2aa198 }
+/* LiteralStringAffix */ .chroma .sa { color: #2aa198 }
+/* LiteralStringBacktick */ .chroma .sb { color: #586e75 }
+/* LiteralStringChar */ .chroma .sc { color: #2aa198 }
+/* LiteralStringDelimiter */ .chroma .dl { color: #2aa198 }
+/* LiteralStringDouble */ .chroma .s2 { color: #2aa198 }
+/* LiteralStringEscape */ .chroma .se { color: #cb4b16 }
+/* LiteralStringInterpol */ .chroma .si { color: #2aa198 }
+/* LiteralStringOther */ .chroma .sx { color: #2aa198 }
+/* LiteralStringRegex */ .chroma .sr { color: #dc322f }
+/* LiteralStringSingle */ .chroma .s1 { color: #2aa198 }
+/* LiteralStringSymbol */ .chroma .ss { color: #2aa198 }
+/* LiteralNumber */ .chroma .m { color: #2aa198 }
+/* LiteralNumberBin */ .chroma .mb { color: #2aa198 }
+/* LiteralNumberFloat */ .chroma .mf { color: #2aa198 }
+/* LiteralNumberHex */ .chroma .mh { color: #2aa198 }
+/* LiteralNumberInteger */ .chroma .mi { color: #2aa198 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #2aa198 }
+/* LiteralNumberOct */ .chroma .mo { color: #2aa198 }
+/* Operator */ .chroma .o { color: #719e07 }
+/* OperatorWord */ .chroma .ow { color: #719e07 }
+/* Comment */ .chroma .c { color: #586e75 }
+/* CommentHashbang */ .chroma .ch { color: #586e75 }
+/* CommentMultiline */ .chroma .cm { color: #586e75 }
+/* CommentSingle */ .chroma .c1 { color: #586e75 }
+/* CommentSpecial */ .chroma .cs { color: #719e07 }
+/* CommentPreproc */ .chroma .cp { color: #719e07 }
+/* CommentPreprocFile */ .chroma .cpf { color: #719e07 }
+/* GenericDeleted */ .chroma .gd { color: #dc322f }
+/* GenericEmph */ .chroma .ge { font-style: italic }
+/* GenericError */ .chroma .gr { color: #dc322f; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #cb4b16 }
+/* GenericInserted */ .chroma .gi { color: #719e07 }
+/* GenericStrong */ .chroma .gs { font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #268bd2 }
+
+/* Chroma - end */

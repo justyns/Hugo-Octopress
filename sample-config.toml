@@ -12,16 +12,13 @@ disqusShortname = "Your disqus shortname"
 # Number of blog posts in each pagination page
 paginate = 6
 
-# Keep it as false please, the CSS file contains the code for highlighting
-pygmentsuseclasses = false
-pygmentsstyle = "solarized_dark"
-
-# You need to install Solarized from https://github.com/john2x/solarized-pygment
-# Octopress classic theme uses Solarized_dark
-# Options are solarized_dark (octopress), solarized_dark256 and solarized_light
+# Code highlighting options
 
 # Highlight shortcode and code fences (```) will be treated similarly
 pygmentscodefences = true
+
+# Use CSS for highlighting
+pygmentsuseclasses = true
 
 # pygments options can be added here (and in the highlight shortcode in the markdown file)
 # Hugo supports these pygments options: style, encoding, noclasses, hl_lines, linenos
@@ -31,10 +28,10 @@ pygmentscodefences = true
 post = "/blog/:year-:month-:day-:title/" # change the post URL to look like the old ones
 
 # Make tags and categories work
-[indexes]
-  tag = "tags"
-  category = "categories"
-
+# As of Hugo v0.33 these are not needed anymore
+# [indexes]
+#   tag = "tags"
+#   category = "categories"
 
 [params]
 
@@ -96,6 +93,11 @@ post = "/blog/:year-:month-:day-:title/" # change the post URL to look like the 
   # Google analytics code - remove if you do not have/want Google Analytics - needs JavaScript
   # googleAnalytics = "UA-XXXXX-X"
 
+  # Optional piwik tracking
+  #[params.analytics.piwik]
+  #  URL = "https://stats.example.com"
+  #  ID = "42"
+
   # Switch to true to enable RSS icon link
   rss = true
 
@@ -125,11 +127,26 @@ post = "/blog/:year-:month-:day-:title/" # change the post URL to look like the 
   # Set to true to disable downloading of remote Google fonts
   disableGoogleFonts = false
 
+  # Remove or Set to false to use local fonts
+  # remoteFonts = false
+  
+  # Remove or set to false to use FontAwesome CDN, otherwise the theme uses ForkAwesome local fonts.
+  # fontAwesome = false
+
   # Generate taxonomy pages
   generateTaxonomyList = true
 
   # This is not needed unless alphabetical sort is needed
   # sortTaxonomyAlphabetical = true
+
+  # Twitter card config
+  # Enable with this.
+  # twitterCardEnabled = true
+  # Don't include the @.
+  # twitterCardSite = 
+  # twitterCardDomain = "parsiya.net"
+  # Don't include the @.
+  # twitterCardAuthor = "CryptoGangsta"
 
 # Menu
 # If navigationNewWindow (under [params]) is set to true then all links except root ("/") will open in a new window
